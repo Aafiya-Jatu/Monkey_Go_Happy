@@ -48,6 +48,7 @@ function draw(){
   background(255);
   
   if(gameState === PLAY){
+    survivalTime = Math.ceil(frameCount/frameRate());
     
     monkey.velocityY = monkey.velocityY + 0.5;
     
@@ -90,8 +91,6 @@ function draw(){
     
     backImage.velocityX = 0;
     
-    monkey.collide(ground);
-    
   }
   
   drawSprites();
@@ -102,7 +101,7 @@ function draw(){
   text("score: " + score, 50, 420);
   
   
-  survivalTime = Math.ceil(frameCount/frameRate());
+  
   stroke("black");
   fill("black");
   textSize(20);
